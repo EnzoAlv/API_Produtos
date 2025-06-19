@@ -1,17 +1,17 @@
-API Produtos
-StartFragment
+# 🛍️ API Produtos
 
-<p >API RESTful para gerenciar produtos de uma loja com MongoDB.</p> 
+API RESTful para gerenciar produtos de uma loja com MongoDB.
 
-📌 POST /produto – Cadastrar produto
-Descrição:
+---
 
+## 📌 POST `/produto` – Cadastrar produto
+
+**Descrição:**  
 Cadastra um novo produto no banco de dados.
 
-Body (JSON):
-
-Plain Text
-jsonCopiarEditar{
+**Body (JSON):**
+```json
+{
   "nome": "Notebook Gamer",
   "descricao": "RTX 3060, i7, 16GB RAM",
   "cor": "Preto",
@@ -21,8 +21,10 @@ jsonCopiarEditar{
 }
 Resposta esperada (201):
 
-Plain Text
-jsonCopiarEditar{
+json
+Copiar
+Editar
+{
   "_id": "...",
   "nome": "...",
   "descricao": "...",
@@ -30,14 +32,14 @@ jsonCopiarEditar{
 }
 📌 GET /produto – Listar todos os produtos
 Descrição:
-
 Retorna todos os produtos cadastrados.
 
 Resposta esperada (200):
 
-View More
-Plain Text
-jsonCopiarEditar[
+json
+Copiar
+Editar
+[
   {
     "_id": "...",
     "nome": "Notebook Gamer",
@@ -51,59 +53,69 @@ jsonCopiarEditar[
 ]
 📌 GET /produto/:valor – Buscar por ID ou Nome
 Descrição:
-
 Busca um produto pelo ID ou nome exato.
 
 Exemplo de URL:
 
-Plain Text
-bashCopiarEditarGET /produto/Notebook Gamer
+bash
+Copiar
+Editar
+GET /produto/Notebook Gamer
 GET /produto/665e3f9a23b9dbfa2d8d6d55
 Resposta esperada:
 
-Plain Text
-jsonCopiarEditar{
+json
+Copiar
+Editar
+{
   "_id": "...",
   "nome": "Notebook Gamer",
   ...
 }
 📌 PUT /produto/:id – Atualizar produto
 Descrição:
-
 Atualiza os dados de um produto existente.
 
 Exemplo de URL:
 
-Plain Text
-bashCopiarEditarPUT /produto/665e3f9a23b9dbfa2d8d6d55
+bash
+Copiar
+Editar
+PUT /produto/665e3f9a23b9dbfa2d8d6d55
 Body (JSON):
 
-Plain Text
-jsonCopiarEditar{
+json
+Copiar
+Editar
+{
   "preco": 7499.90,
   "cor": "Cinza"
 }
 Resposta esperada:
 
-Plain Text
-jsonCopiarEditar{
+json
+Copiar
+Editar
+{
   "_id": "...",
   "nome": "...",
   ...
 }
 📌 DELETE /produto/:id – Deletar produto
 Descrição:
-
 Remove um produto do banco de dados.
 
 Exemplo de URL:
 
-Plain Text
-bashCopiarEditarDELETE /produto/665e3f9a23b9dbfa2d8d6d55
+bash
+Copiar
+Editar
+DELETE /produto/665e3f9a23b9dbfa2d8d6d55
 Resposta esperada:
 
-Plain Text
-jsonCopiarEditar{
+json
+Copiar
+Editar
+{
   "message": "Produto deletado com sucesso."
 }
-EndFragment
